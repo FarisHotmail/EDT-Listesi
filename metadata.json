@@ -1,0 +1,8 @@
+{
+  "name": "Remix Şirket Rehberi \u0026 Şube Bulucu",
+  "description": "Google E-Tablo verisiyle çalışan interaktif şirket ve şube sorgulama rehberi, firma kartı ve tam liste görünümü.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "Company": {
+      "title": "Company",
+      "description": "Şirket ve şube kayıt bilgileri",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sehir": { "type": "string" },
+        "ilce": { "type": "string" },
+        "tabelaUnvani": { "type": "string" },
+        "musteriUnvani": { "type": "string" },
+        "adres": { "type": "string" },
+        "iletisim1": { "type": "string" },
+        "iletisim2": { "type": "string" }
+      },
+      "required": ["id", "sehir"]
+    },
+    "DirectoryMeta": {
+      "title": "DirectoryMeta",
+      "description": "Rehber güncelleme üstverileri",
+      "type": "object",
+      "properties": {
+        "lastUpdated": { "type": "string" },
+        "count": { "type": "number" }
+      }
+    }
+  },
+  "firestore": {
+    "/companies/{companyId}": {
+      "schema": "Company",
+      "description": "Tüm şirket ve şubelerin listesi"
+    },
+    "/meta/{metaId}": {
+      "schema": "DirectoryMeta",
+      "description": "Rehber güncelleme tarihi ve toplam sayı"
+    }
+  }
+}

@@ -121,19 +121,7 @@ export default function App() {
     setTimeout(() => setToastMessage(null), 5000);
   };
 
-  const handleResetToDefault = async () => {
-    await saveCompaniesToFirestore(INITIAL_COMPANIES);
-    setCompanies(INITIAL_COMPANIES);
-    setSelectedCompany(INITIAL_COMPANIES[0]);
-    handleResetFilters();
-    try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch {
-      // ignore
-    }
-    setToastMessage('Varsayılan liste geri yüklendi ve buluta aktarıldı.');
-    setTimeout(() => setToastMessage(null), 4000);
-  };
+
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-100 text-slate-800 antialiased">
@@ -197,7 +185,6 @@ export default function App() {
         isOpen={isExcelModalOpen}
         onClose={() => setIsExcelModalOpen(false)}
         onImportSuccess={handleExcelImportSuccess}
-        onResetToDefault={handleResetToDefault}
       />
 
       {/* Footer */}

@@ -9,7 +9,6 @@ import {
   AlertCircle, 
   Download, 
   ShieldCheck, 
-  RotateCcw,
   Cloud
 } from 'lucide-react';
 
@@ -17,14 +16,12 @@ interface ExcelImportModalProps {
   isOpen: boolean;
   onClose: () => void;
   onImportSuccess: (newCompanies: Company[]) => Promise<void> | void;
-  onResetToDefault: () => void;
 }
 
 export const ExcelImportModal: React.FC<ExcelImportModalProps> = ({
   isOpen,
   onClose,
   onImportSuccess,
-  onResetToDefault,
 }) => {
   const [file, setFile] = useState<File | null>(null);
   const [isValidating, setIsValidating] = useState(false);
@@ -201,21 +198,7 @@ export const ExcelImportModal: React.FC<ExcelImportModalProps> = ({
             </div>
           )}
 
-          {/* Revert to default option */}
-          <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[11px]">
-            <span className="text-slate-500">Varsayılan demo listesine dönmek isterseniz:</span>
-            <button
-              type="button"
-              onClick={() => {
-                onResetToDefault();
-                handleClose();
-              }}
-              className="text-slate-700 hover:text-slate-900 underline flex items-center gap-1 font-medium"
-            >
-              <RotateCcw className="w-3 h-3" />
-              <span>Orijinal Listeyi Yükle</span>
-            </button>
-          </div>
+
         </div>
 
         {/* Footer Actions */}
